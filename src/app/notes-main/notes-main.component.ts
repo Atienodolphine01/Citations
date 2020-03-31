@@ -8,6 +8,9 @@ import { Notes } from '../notes';
 })
 export class NotesMainComponent implements OnInit {
 
+  notes: Notes[] = [
+    new Notes('Starford', 'Og Mandino' 'Failure will never overtake me if my determination to succeed is strong enough.')
+  ]
   constructor() { }
 
   ngOnInit(): void {

@@ -1,1 +1,25 @@
-<p>notes-main works!</p>
+<div class="row">
+    <div class= "id="col1" class="col-md-6 col-sm-12">
+        <div class="card mt-3" *ngFor='let notes of note;let i = index'>
+            <div class="card-header text-center bg-info text-white"> 
+                Created by: {{notes.name}}
+            </div>
+            <div>
+                <div appHighestvote *ngIf="mostLiked()===notes.upvote && notes.upvote > 0" class="card-body">
+                    {{notes.quote}}
+                </div>
+                <div  *ngIf="mostLiked()!==notes.upvote || notes.upvote===0" class="card-body">
+                    {{notes.quote}}
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-sm btn-outline-info mr-4" (click)='toggleDetails(i)'>more</button>
+                    <app-notes-detail *ngIf='notes.toggleDetails' [notes]='quote' (isDone)='purgeNotes($event,i)' (voteIncreese)='addVote($event,i)' (voteDecrease)='lessVote($event,i)'>
+                    </app-notes-detail>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="col2" class="col-md-6">
+        <app-notes-form (addNotes)="addNewNotes($event)" ></app-notes-form>
+    </div>
+</div>
