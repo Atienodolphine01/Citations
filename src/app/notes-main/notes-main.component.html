@@ -13,7 +13,7 @@
                 </div>
                 <div class="card-footer">
                     <button class="btn btn-sm btn-outline-info mr-4" (click)='toggleDetails(i)'>more</button>
-                    <app-notes-detail *ngIf='notes.toggleDetails' [notes]='quote' (isDone)='purgeNotes($event,i)' (voteIncreese)='addVote($event,i)' (voteDecrease)='lessVote($event,i)'>
+                    <app-notes-detail *ngIf='notes.toggleDetails' [notes]='quote' (isDone)='deleteNotes($event,i)' (voteIncrease)='addVote($event,i)' (voteDecrease)='lessVote($event,i)'>
                     </app-notes-detail>
                 </div>
             </div>
