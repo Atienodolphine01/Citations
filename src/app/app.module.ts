@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { NotesMainComponent } from './notes-main/notes-main.component';
 import { NotesDetailComponent } from './notes-detail/notes-detail.component';
 import { NotesFormComponent } from './notes-form/notes-form.component';
+import { HighvoteDirective } from './highvote.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotesMainComponent,
     NotesDetailComponent,
-    NotesFormComponent
+    NotesFormComponent,
+    HighvoteDirective
   ],
   imports: [
     BrowserModule,
