@@ -8,6 +8,7 @@ import { NotesMainComponent } from './notes-main/notes-main.component';
 import { NotesDetailComponent } from './notes-detail/notes-detail.component';
 import { NotesFormComponent } from './notes-form/notes-form.component';
 import { HighvoteDirective } from './highvote.directive';
+import { DateCountPipe } from './date-count.pipe';
 
 @NgModule({
   declarations: [
@@ -15,13 +16,15 @@ import { HighvoteDirective } from './highvote.directive';
     NotesMainComponent,
     NotesDetailComponent,
     NotesFormComponent,
-    HighvoteDirective
+    HighvoteDirective,
+    DateCountPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-    FormsModule
+    AppRoutingModule,
+    FormsModule,
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

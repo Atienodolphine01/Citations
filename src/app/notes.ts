@@ -1,5 +1,6 @@
 export class Notes {
     viewDetails: boolean;
+    
     constructor(
         public name: string,
         public author: string,
