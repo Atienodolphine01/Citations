@@ -1,1 +1,8 @@
-
+<div>
+    <ul>
+      <li *ngFor='let Notes of nootes'>
+        {{Notes.name}}
+        <app-notes-detail [notes]='nootes'></app-notes-detail>
+      </li>
+    </ul>
+  </div>
