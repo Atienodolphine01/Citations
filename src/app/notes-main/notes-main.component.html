@@ -10,7 +10,7 @@
             </div>
             <div class="card-footer">
                 <button class="btn btn-sm btn-outline-info mr-4" (click)='toggleDetails(i)'>more</button>
-                <app-notes-detail *ngif='Notes.showQuote' [Notes]='Notes' (isComplete) = 'completeNotes($event, 1)'></app-notes-detail>
+                <app-notes-detail *ngIf='Notes.showQuote' [Notes]='Notes' (isComplete) = 'completeNotes($event, i)'></app-notes-detail>
             </div>
         </div>
     </div> 

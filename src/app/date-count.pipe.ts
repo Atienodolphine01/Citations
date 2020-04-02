@@ -12,13 +12,13 @@ export class DateCountPipe implements PipeTransform {
       if (seconds < 29) // less than 30 seconds ago show as 'Just now'
           return 'Just now';
       const intervals = {
-        'second': 1,
-        'minute': 60,
-        'hour': 3600,
-        'day': 86400,
-        'week': 604800,
-        'month': 2592000,
-        'year': 31536000,
+            'year': 31536000,
+            'month': 2592000,
+            'week': 604800,
+            'day': 86400,
+            'hour': 3600,
+            'minute': 60,
+            'second': 1
       };
       
       let count;
