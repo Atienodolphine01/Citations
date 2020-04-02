@@ -9,7 +9,7 @@
                     {{Notes.quote}}
             </div>
             <div class="card-footer">
-                <button class="btn btn-sm btn-outline-info mr-4" (click)='toggleDetails(i)'>more</button>
+                <button class="btn btn-sm btn-outline-primary mr-4" (click)='toggleDetails(i)'>more</button>
                 <app-notes-detail *ngIf='Notes.showQuote' [Notes]='Notes' (isComplete) = 'completeNotes($event, i)'></app-notes-detail>
             </div>
         </div>
