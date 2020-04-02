@@ -4,8 +4,9 @@
     font-weight: bold;
     
 }
-#home {
+#top {
     height: 60px;
+    background-color: blue;
     }
 #text{
     font-size: 30px;
