@@ -1,6 +1,6 @@
 export class Notes {
   showQuote: boolean;
-  constructor( name: string, author: string, quote: string){
+  constructor(public name: string, public author: string, public quote: string){
     this.showQuote= false;
   }    
        

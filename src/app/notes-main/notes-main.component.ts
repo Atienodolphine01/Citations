@@ -7,12 +7,22 @@ import { Notes } from '../notes';
   styleUrls: ['./notes-main.component.css']
 })
 export class NotesMainComponent implements OnInit {
-  nootes:Notes[] = [
-    {name:'Starford', author:'Og Mandino', quote:'Failure will never overtake me if my determination to succeed is strong enough.'},
-    {name:'Miriam', author:'Brian Tracy', quote:'Winners make a habit of manufacturing their own positive expectations in advance of the event.'},
-    {name:'Dolphine', author:'Kobe Bryant', quote:'The most important thing is to try and inspire people so that they can be great in whatever they want to do.'},
+  Notes:Notes[] = [
+    new Notes('Starford', 'Og Mandino', 'Failure will never overtake me if my determination to succeed is strong enough.'),
+    new Notes('Miriam', 'Brian Tracy', 'Winners make a habit of manufacturing their own positive expectations in advance of the event.'),
+    new Notes('Dolphine', 'Kobe Bryant', 'The most important thing is to try and inspire people so that they can be great in whatever they want to do.'),
 
   ];
+
+  toggleDetails(index){
+    this.Notes[index].showQuote = !this.Notes[index].showQuote;
+  }
+
+  completeNotes(isComplete, index){
+    if (isComplete) {
+      this.Notes.splice(index,1);
+    }
+  }
   
   constructor() { }
 

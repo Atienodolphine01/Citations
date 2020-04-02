@@ -1,8 +1,10 @@
 <div>
     <ul>
-      <li *ngFor='let Notes of nootes'>
-        {{Notes.name}}
-        <app-notes-detail [notes]='nootes'></app-notes-detail>
-      </li>
+      <div *ngFor='let Notes of Notes; let i = index'>
+          <li>{{Notes.name}}</li>
+          <button (click)='toggleDetails(i)'>Toggle Details</button>
+      </div>
+        
+        <app-notes-detail *ngif='Notes.showQuote' [Notes]='Notes' (isComplete) = 'completeNotes($event, 1)'></app-notes-detail>
     </ul>
   </div>

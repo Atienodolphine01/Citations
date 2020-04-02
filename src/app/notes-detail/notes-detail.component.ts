@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { Notes } from '../notes';
 
 
@@ -8,7 +8,12 @@ import { Notes } from '../notes';
   styleUrls: ['./notes-detail.component.css']
 })
 export class NotesDetailComponent implements OnInit {
-  @Input() notes: Notes;
+  @Input() Notes: Notes;
+  @Output() isComplete = new EventEmitter<boolean>();
+
+  NotesComplete(complete:boolean){
+    this.isComplete.emit(complete);
+  }
   constructor() { }
 
   ngOnInit() {
