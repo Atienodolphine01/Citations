@@ -8,16 +8,10 @@ import { Notes } from '../notes';
 })
 export class NotesFormComponent implements OnInit {
 
-  newNotes = new Notes("", "", "", 0, 0, new Date());
-  @Output() addNotes = new EventEmitter<Notes>();
-  submitNotes() {
-    this.addNotes.emit(this.newNotes);
-    
-  }
-
+  
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
