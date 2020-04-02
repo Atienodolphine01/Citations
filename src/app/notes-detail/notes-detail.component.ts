@@ -11,9 +11,21 @@ export class NotesDetailComponent implements OnInit {
   @Input() Notes: Notes;
   @Output() isComplete = new EventEmitter<boolean>();
 
-  NotesComplete(complete:boolean){
-    this.isComplete.emit(complete);
+  @Output () voteIncrease = new EventEmitter<boolean>();
+  @Output () voteDecrease = new EventEmitter<boolean>();
+
+  fnDecrease(two:boolean){
+    this.voteDecrease.emit(two);
   }
+
+  fnIncrease(one:boolean){
+    this.voteIncrease.emit(one);
+  }
+  NotesMary(completeNotes: boolean) {
+    this.isComplete.emit(completeNotes);
+  }
+
+  
   constructor() { }
 
   ngOnInit() {

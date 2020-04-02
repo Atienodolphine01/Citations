@@ -1,10 +1,20 @@
-<div>
-    <ul>
-      <div *ngFor='let Notes of Notes; let i = index'>
-          <li appHighvote>{{Notes.name}}</li>
-          <button (click)='toggleDetails(i)'>Toggle Details</button>
-      </div>
-        
-        <app-notes-detail *ngif='Notes.showQuote' [Notes]='Notes' (isComplete) = 'completeNotes($event, 1)'></app-notes-detail>
-    </ul>
-  </div>
+<div class="row">
+    <div  id="col1" class="col-md-6 col-sm-12">
+        <div class="card mt-3" *ngFor='let Notes of Notes;let i = index'>
+            <div class="card-header text-center bg-info text-white">Posted by: {{Notes.name}}</div>
+            <div appHighestvote *ngIf="mostLiked()===Notes.upvote && Notes.upvote > 0" class="card-body">
+                {{Notes.quote}}
+            </div>
+            <div  *ngIf="mostLiked()!==Notes.upvote || Notes.upvote===0" class="card-body">
+                    {{Notes.quote}}
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-sm btn-outline-info mr-4" (click)='toggleDetails(i)'>more</button>
+                <app-notes-detail *ngif='Notes.showQuote' [Notes]='Notes' (isComplete) = 'completeNotes($event, 1)'></app-notes-detail>
+            </div>
+        </div>
+    </div> 
+    <div id="col2" class="col-md-6">
+        <app-notes-form (addNotes)="addNewQuote($event)" ></app-notes-form>
+    </div>
+</div>

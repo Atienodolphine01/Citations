@@ -20,8 +20,48 @@ export class NotesMainComponent implements OnInit {
 
   completeNotes(isComplete, index){
     if (isComplete) {
+      let toDelete = confirm(`Are you sure you want to delete this Quote`);
+      if (toDelete){
       this.Notes.splice(index,1);
+      }
     }
+  }
+
+  addNewQuote(mary) {
+    mary.elapse = new Date(mary.elapse)
+    this.Notes.push(mary);
+   
+  }
+  addVote(mary, index) {
+    if (mary) {
+      this.Notes[index].upvote+=1;
+    }
+  }
+  lessVote(mary,index){
+    if(mary){
+      this.Notes[index].downvote+=1
+    }
+  }
+
+  initialNum:number
+  finalNum:number
+  count:number
+
+  mostLiked(){
+    this.initialNum=0
+    this.finalNum=0
+    for (this.count=0; this.count < this.Notes.length;this.count++){
+      this.finalNum =this.Notes[this.count].upvote;
+
+      if(this.finalNum > this.initialNum){
+        this.initialNum = this.finalNum
+      }
+  
+    
+      
+    }
+
+    return this.initialNum;
   }
   
   constructor() { }
