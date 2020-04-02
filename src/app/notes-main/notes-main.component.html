@@ -1,7 +1,7 @@
 <div>
     <ul>
       <div *ngFor='let Notes of Notes; let i = index'>
-          <li>{{Notes.name}}</li>
+          <li appHighvote>{{Notes.name}}</li>
           <button (click)='toggleDetails(i)'>Toggle Details</button>
       </div>
         
