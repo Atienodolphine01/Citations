@@ -1,6 +1,17 @@
 # Note
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
+[Check it out](https://atienodolphine01.github.io/Citations/)
+
+## Author:
+> Dolphine Atieno
+
+## Setup:
+`git clone https://github.com/Atienodolphine01/Citations.git` or download the zip file
+
+Extract the zip file
+
+`cd` project folder
 
 ## Development server
 
